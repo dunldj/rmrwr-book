@@ -187,7 +187,7 @@ In the Source Pane tab for app.R, scroll to the ui and within that, the titlePan
 Edit the title to "Medical Textbooks".
 
 Now replace `sliderInput` with `selectInput`.
-Change the inputID from "bins" to "book".
+Change the inputId from "bins" to "book".
 Change the label from "Number of bins:" to "Select a Textbook:" Delete the min, max, and value arguments.
 Add a choices argument, with `choices = list("Textbook of Surgery", "Textbook of Gastroenterology", "Diseases of the Liver and Biliary System")`.
 Double check that all your parentheses still match, and that you still have a comma between `sidebarPanel` and `mainPanel`.
@@ -282,17 +282,17 @@ Common input widgets include:
 #### Assign Each Input to an input "ID" = input\$ID
 
 For each input, there is an input type, and a unique function for that input type, like `numericInput()` for asking the user for a number.
-You will use the first argument to this function to assign the inputID.
+You will use the first argument to this function to assign the inputId.
 This is a short helpful name for this variable, like "age", or "creatinine".
 These are assigned with quotes in the user interface section.
 
-For example, you might use <br> `numericInput(inputID = "age",` <br> `label = "Type in the age",` <br> `min =1, max = 100, value = 35)` <br> The same variables will be referred to in the server section as `input$age` or `input$creatinine`.
+For example, you might use <br> `numericInput(inputId = "age",` <br> `label = "Type in the age",` <br> `min =1, max = 100, value = 35)` <br> The same variables will be referred to in the server section as `input$age` or `input$creatinine`.
 
 The arguments for each input function in the user interface are a lot alike.
 These include:
 
--   `inputID` - the name to use to look up the value of the widget (as a character string).
-    e.g. `inputID = "age"`.
+-   `inputId` - the name to use to look up the value of the widget (as a character string).
+    e.g. `inputId = "age"`.
     Note that the server section will refer to this same value as `input$age`, while the user interface will refer to it as "age".
     They are the same thing.
 
@@ -349,7 +349,7 @@ and all of the data import, data processing, rendering of objects to HTML, and a
 
 ### Using the input values & Data
 
-Data values from the user in the ui section are each assigned an inputID in quotes, like "height_cm", or "weight_kg".
+Data values from the user in the ui section are each assigned an inputId in quotes, like "height_cm", or "weight_kg".
 
 These can be accessed in the server section with `input$height_cm` or `input$weight_kg`.
 
@@ -407,11 +407,11 @@ Delete this and replace it with a `numericInput()` for weight, and a `sliderInpu
 ```{r, eval=FALSE}
 
   sidebarPanel( numericInput(
-    inputID = "weight_kg",
+    inputId = "weight_kg",
     label = "Enter weight in kilograms",
     value = 70),
     sliderInput(
-    inputID = "height_m",
+    inputId = "height_m",
     label = "Enter height in meters",
     value = 1.7, min = 0.5, max = 2.7)
   )
